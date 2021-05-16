@@ -1,5 +1,5 @@
 # docker
-[create an anchor]
+[create an anchor](#list-of-Docker-commands)  
 Let's start off with just building a docker image  
 
 The bare essentials:  
