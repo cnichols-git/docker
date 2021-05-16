@@ -1,6 +1,6 @@
 # docker
 
-[docker-commands](#docker-commands)  
+[docker-commands](#Docker Commands)  
 
 Let's start off with just building a docker image  
 
@@ -18,4 +18,4 @@ The container also needs something to do in this ex. we are echoing a string of 
 docker build . `
 
 ^ we are using the period to indcate this is the directory to build this image in. 
-### <a id="docker-commands"></a> Docker Commands
+### <a id="Docker Commands"></a> Docker Commands
