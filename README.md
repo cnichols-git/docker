@@ -4,10 +4,9 @@ Let's start off with just building a docker image
 
 The bare essentials:  
 
-...
-FROM alpine  
-CMD [ "echo hello world" ]  
-...
+
+'FROM alpine  
+CMD [ "echo hello world" ]'
 
 That is it. The FORM is the docker base image you are using ex. Alpine, Ubuntu:latest, or Ngnix.  
 The container also needs something to do in this ex. we are echoing a string of text.  
