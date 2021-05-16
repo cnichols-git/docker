@@ -2,7 +2,7 @@
 
 [Docker Commands](#docker-commands)  
 
-Let's start off with just building a docker image  
+## Let's start off with just building a docker image  
 
 The bare essentials:  
 
