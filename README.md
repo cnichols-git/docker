@@ -1,5 +1,7 @@
 # docker
-[create an anchor](#list-of-Docker-commands)  
+
+[Header](#my-header)  
+
 Let's start off with just building a docker image  
 
 The bare essentials:  
@@ -16,5 +18,4 @@ The container also needs something to do in this ex. we are echoing a string of 
 docker build . `
 
 ^ we are using the period to indcate this is the directory to build this image in. 
-
-(#list-of-Docker-commands)List of Docker commands  
+### <a id="my-header"></a> Header
