@@ -8,3 +8,7 @@ USER chris
 ENV HOME /home/chris
 CMD getent passwd chris
 CMD /usr/bin/firefox
+
+
+# To launch this run this:
+# sudo docker run -e DISPLAY -v $HOME/.Xauthority:/home/chris/.Xauthority --net=host <build_name>
