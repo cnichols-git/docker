@@ -1,0 +1,49 @@
+source -> https://linuxhint.com/create_docker_image_from_scratch/  
+
+From scratch  
+## Rest of the Dcokerfile  
+
+Create a folder called MyDockerImage and creating a file hello.cc inside it  
+
+`$ mkdir MyDockerImage`  
+`$ cd MyDockerImage`  
+`$ touch hello.cc`  
+
+#include<iostream>
+using namespace std;
+int main(){
+cout << "Hello! This message is coming from a container \n ";
+return 0;
+}
+
+compile like so...
+g++ -o hello -static hello.cc
+
+while in the same dir run:
+./hello
+
+At this point you have made a container and it works
+
+Now to create a Dockerfile to expand the power of the tool. 
+Examples include exposing ports or using allowing access to a local file.
+
+To create the Dcokerfile: 
+
+$touch Dockerfile
+
+add this:
+
+FROM scratch
+ADD hello /
+CMD ["/hello"]
+
+Now this docker config file know what to do, 
+
+Run the dokcer build process:
+docker build --tag hello . #the dot says buidl it here
+
+List your docker images:
+# docker images
+
+Run the container:
+# docker run hello
