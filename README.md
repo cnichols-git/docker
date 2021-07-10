@@ -19,3 +19,6 @@ docker build . `
 
 ^ we are using the period to indcate this is the directory to build this image in. 
 ### <a id="docker-commands"></a> Docker Commands
+docker run -p 1234:80 nginx
+docker run -p <server IP>:80 nginx
+
