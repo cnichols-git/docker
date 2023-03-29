@@ -23,16 +23,4 @@ docker run -p 1234:80 nginx
 docker run -p <server IP>:80 nginx
 
 ---
-- name: download vscode
-  hosts: local
-  tasks:
-   - name: download vscode
-     become: yes
-     get_url:
-       url: https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64
-       dest: /tmp
-   - name: Install package.
-     yum:
-       name: /tmp/code*.rpm
-       state: present
-       
+
