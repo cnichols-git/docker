@@ -1,0 +1,39 @@
+---
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-storage: {}
+  alertmanager-data: {}
+    
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    command: "--config.file=/etc/prometheus/prometheus.yml"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+      - ./config/rules.yml:/etc/prometheus/alert.rules.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+     - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
+
+  alert-manager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    ports:
+     - 9093:9093
+    volumes:
+      - "./alertmanager:/config"
+      - alertmanager-data:/data
+    command: '--storage.path=/alertmanager --config.file=/etc/alertmanager/alertmanager.yml --log.level=debug'
+    restart: unless-stopped
