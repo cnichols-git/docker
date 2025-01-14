@@ -93,3 +93,8 @@ poadman-compose up --force-recreate --build -d
 podman image prune -f
 
 ```
+
+```
+If you have not been back is a while remember to run the containers if they are not started automatically, thanks.
+
+```
