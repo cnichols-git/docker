@@ -18,5 +18,8 @@ scrape_configs:
     static_configs:
       - targets: 
           - localhost:9090 # note
-          - 10.0.0.21:9100 # Ubnut-vm
+          - 10.0.0.22:9100 # Ubnut-vm
           - 10.0.0.40:9100 # NodeExploter
+          - 10.0.0.41:9100 # kubenode-1
+          - 10.0.0.42:9100 # kubenode-2
+          - 10.0.0.43:9100 # kubemain

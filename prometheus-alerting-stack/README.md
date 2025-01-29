@@ -98,3 +98,56 @@ podman image prune -f
 If you have not been back is a while remember to run the containers if they are not started automatically, thanks.
 
 ```
+
+```
+To view other servers in the alerting stack you must have node_exporter installed on that server
+
+you will need to download the software, run it and make a user account
+
+Setup Node_exporter as a service
+
+Before creating a node exporter service file, create a new system user 'node_exporter'.
+
+1. Execute the following command to create a new system user.
+
+sudo adduser -M -r -s /sbin/nologin node_exporter
+
+2. Next, create a new service file for node exporter '/etc/systemd/system/node_exporter.service' using nano editor.
+
+sudo nano /etc/systemd/system/node_exporter.service
+
+Copy and paste the following configuration.
+
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+
+Save the configuration and exit.
+
+3. Now reload the systemd manager to apply the new configuration.
+
+sudo systemctl daemon-reload
+
+4. Start and enable the service 'node_exporter' using the following command.
+
+sudo systemctl enable --now node_exporter
+
+Now ensure that server is added to the config file in the config file
+```
+
+```
+add somehting about arestarting a contaier once you have update a file that it uses for config
+```
+
+```
+how to open ports on Ubuntu and REHL variants
+```
